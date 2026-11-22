@@ -13,3 +13,11 @@
 .externalNativeBuild
 .cxx
 local.properties
+/app/release/app-release.apk
+/app/release/baselineProfiles/0/app-release.dm
+/app/release/baselineProfiles/1/app-release.dm
+/app/release/release/baselineProfiles/0/app-release.dm
+/app/release/release/baselineProfiles/1/app-release.dm
+/app/release/release/output-metadata.json
+/app/release/output-metadata.json
+/app/release/release/touchgrass-V1.2-SIGNED.apk
