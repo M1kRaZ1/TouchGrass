@@ -23,26 +23,3 @@ app/src/main/java/ch/luca/touchgrass/
 ├── Grass.kt
 ├── Sun.kt
 └── RemotePlayerShape.kt
-
-flowchart TD
-    Player(("Player"))
-    Main["MainActivity.kt"]
-    Network["NetworkManager.kt"]
-    Surface["MyGLSurfaceView.kt"]
-    Renderer["MyGLRenderer.kt"]
-    Grass["Grass.kt"]
-    Sun["Sun.kt"]
-    Remote["RemotePlayerShape.kt"]
-    NSD["Android NSD"]
-    Peers(("Nearby Peers"))
-
-    Player --> Main
-    Main --> Surface
-    Surface --> Renderer
-    Main --> Renderer
-    Main --> Network
-    Renderer --> Grass
-    Renderer --> Sun
-    Renderer --> Remote
-    Network --> NSD
-    Network --> Peers
