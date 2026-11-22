@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- 3D View Container -->
+    <FrameLayout
+        android:id="@+id/gLViewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Game HUD -->
+    <RelativeLayout
+        android:id="@+id/gameHud"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <!-- Movement Joystick (Left) -->
+        <FrameLayout
+            android:id="@+id/moveJoystickContainer"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="20dp">
+            <View android:id="@+id/moveJoystickBase" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/joystick_base" android:alpha="0.4"/>
+            <View android:id="@+id/moveJoystickThumb" android:layout_width="50dp" android:layout_height="50dp" android:layout_gravity="center" android:background="@drawable/joystick_thumb" android:alpha="0.7"/>
+        </FrameLayout>
+
+        <!-- Camera Joystick (Right) -->
+        <FrameLayout
+            android:id="@+id/cameraJoystickContainer"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="20dp">
+            <View android:id="@+id/cameraJoystickBase" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/joystick_base" android:alpha="0.3"/>
+            <View android:id="@+id/cameraJoystickThumb" android:layout_width="40dp" android:layout_height="40dp" android:layout_gravity="center" android:background="@drawable/joystick_thumb" android:alpha="0.6"/>
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/btnTouchGrass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="40dp"
+            android:text="TOUCH GRASS"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Pause"
+            android:textSize="12sp"
+            android:alpha="0.6" />
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:text="Online: 1"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <!-- Hand Overlay - Fixed to Bottom -->
+        <TextView
+            android:id="@+id/handView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:text="🖐️"
+            android:textSize="120sp"
+            android:gravity="center"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <!-- Main Menu Overlay -->
+    <LinearLayout
+        android:id="@+id/mainMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CC000000"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TOUCH GRASS"
+            android:textColor="#4CAF50"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="PLAY" />
+
+        <Button
+            android:id="@+id/btnSettings"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="SETTINGS" />
+    </LinearLayout>
+
+    <!-- Settings Overlay -->
+    <LinearLayout
+        android:id="@+id/settingsMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EE222222"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="40dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SETTINGS"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Camera Sensitivity"
+            android:textColor="#BBBBBB" />
+
+        <SeekBar
+            android:id="@+id/seekSensitivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:max="100"
+            android:progress="50" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="BACK" />
+    </LinearLayout>
+
+</FrameLayout>
